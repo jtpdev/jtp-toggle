@@ -1,27 +1,76 @@
 # JtpToggle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+A simple multitoggle for Angular.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+To install this, use:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> npm install --save jtp-toggle
 
-## Build
+## Use
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+To use in your project import it in your module like that:
 
-## Running unit tests
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+    import { AppComponent } from './app.component';
+    import { ToggleModule } from 'jtp-togglw';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+    @NgModule({
+      declarations: [
+        AppComponent
+      ],
+      imports: [
+        BrowserModule,
+        ToggleModule
+      ],
+      providers: [
+        LevenshteinService
+      ],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule { }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+and use in your component:
+
+    <jtp-toggle [options]="options" [set]="model" (get)="model = $event"></jtp-toggle>
+
+and
+
+    import { Component } from '@angular/core';
+
+    @Component({
+      selector: 'app-root',
+      templateUrl: './app.component.html',
+      styleUrls: ['./app.component.css']
+    })
+    export class AppComponent {
+
+      options = [
+        {
+          icon: 'ion-ios-camera-outline',
+          color: '#858585',
+          value: 0
+        },
+        {
+          icon: 'ion-ios-camera-outline',
+          color: '#00FF00',
+          value: 1
+        },
+        {
+          icon: 'ion-ios-camera',
+          color: '#FF0000',
+          value: 2
+        },
+      ];
+
+      model = 1;
+
+    }
+And done!
