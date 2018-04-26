@@ -1,17 +1,35 @@
 {
   "name": "jtp-toggle",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "packagr": "ng-packagr -p package.json"
   },
-  "private": true,
-  "dependencies": {
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular 2",
+    "angular4"
+  ],
+  "author": "Jimmy Porto",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtpdev/jtp-alert.git"
+  },
+  "homepage": "https://github.com/jtpdev/jtp-alert",
+  "bugs": {
+    "url": "https://github.com/jtpdev/jtp-alert/issues"
+  },
+  "dependencies": {},
+  "peerDependencies": {
     "@angular/animations": "^5.2.0",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
@@ -22,6 +40,7 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
+    "ionicons": "2.0.1",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -40,9 +59,19 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^2.4.2",
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "cssUrl": "inline",
+      "externals": {
+        "rxjs/operator/map": "Rx.Observable.prototype"
+      }
+    }
   }
 }
