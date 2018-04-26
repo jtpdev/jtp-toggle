@@ -74,3 +74,7 @@ and
 
     }
 And done!
+
+## P.S.
+
+The **jtp-toggle** uses [ionicons](http://ionicons.com/).
