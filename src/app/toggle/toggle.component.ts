@@ -28,11 +28,14 @@ export class ToggleComponent implements OnInit {
         if (index > -1) {
           this.currentIndex = index;
         }
-      }
-      else {
+      } else {
         this.currentOption = this.options[0];
       }
     }
+  }
+
+  ngDoCheck() {
+    this.initOptions();
   }
 
   change() {
